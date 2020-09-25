@@ -1,5 +1,5 @@
 dofile("sys/lua/utf8.lua")--使用中文转码
-parse("mp_infammo 1")--无尽的子弹，无限的快感
+parse("mp_infammo 1")--无尽
 
 hero={0,0,0,0,0,0,0}
 boss={0,0,0,0}
