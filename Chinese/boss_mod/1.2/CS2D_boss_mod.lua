@@ -220,46 +220,27 @@ function end_r()
 
     --死亡抽取
     if(num~=0)then
-        if(num>=2)then--boss1
-            random(1,1)
-            if(omit_if(1, 1))then
-                random(1, 1)
-            end
-        end
-        if(num>=3)then--hero1
-            random(2, 1)
-            if(omit_if(2, 1))then
-                random(2, 1)
-            end
-        end
-        if(num>=4)then--hero2
-            random(2,2)
-            if(omit_if(2, 2))then
-                random(2,2)
-            end
-        end
-        if(num>=5)then--hero3
-            random(2, 3)
-            if(omit_if(2, 3))then
-                random(2, 3)
-            end
-        end
-        if(num>=6)then--hero4
-            random(2, 4)
-            if(omit_if(2, 4))then
-                random(2, 4)   
-            end
-        end
-        if(num>=7)then--boss2
-            random(1, 2)
-            if(omit_if(1, 2))then
-                random(1, 2)
-            end
-        end
-        if(num>=8)then--spy1
-            random(3, 1)
-            if(omit_if(3, 1))then
-                random(3, 1)
+        for xh=1,num,1 do
+            if(3<=xh<=6)then
+                random(2,(xh-2))
+                if(omit_if(2,(xh-2)))then
+                    random(2,(xh-2))
+                end
+            elseif(xh==2)then
+                random(1,1)
+                if(omit_if(1,1))then
+                    random(1,1)
+                end
+            elseif(xh==7)then
+                random(1,2)
+                if(omit_if(1,2))then
+                    random(1,2)
+                end
+            elseif(xh==8)then
+                random(3,1)
+                if(omit_if(3,1))then
+                    random(3,1)
+                end
             end
         end
 
