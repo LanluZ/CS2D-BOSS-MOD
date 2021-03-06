@@ -7,7 +7,6 @@
 >    - 2个BOSS
 > 
 >   ![alt BOSS1](Chinese\boss_mod\CS2D\gfx\SkinsMenu\super-tank.png)
->
 >   ![alt BOSS1](Chinese\boss_mod\CS2D\gfx\SkinsMenu\sun-king.png)
 >    - 1个精英CT
 >    - 4个精英T
