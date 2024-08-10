@@ -21,18 +21,18 @@ function equip_boss(who,n_choose)--武器给予
         parse('sethealth '..who..' '..250)
         give(who,81,48,90)
         parse('speedmod '..who..' -5')--移动速度减缓
-        msg2(who,'\169000000255You are the last armed force of the Soviet@C')
-        msg2(who,'\169000000255You have the formidable firepower and unbreakable armor@C')
-        msg2(who,'\169000000255Now, take back our hostages!@C')
+        msg2(who,'\169000000255Вы - последняя вооружённая сила советов@C')
+        msg2(who,'\169000000255У вас есть грозное оружие и несокрушимая броня@C')
+        msg2(who,'\169000000255А теперь верните наших заложников!@C')
     end
     if(n_choose==2)then
         image("gfx/SkinsMenu/sun-king.png", 1, 1, 200 + who)--给他贴图
         parse('setmaxhealth '..who..' '..250)
         parse('sethealth '..who..' '..250)
         give(who,84,45,20)
-        msg2(who,'\169000000255You are the CORONA@C')
-        msg2(who,'\169000000255You possess high mobility and destructive glory@C')
-        msg2(who,'\169000000255Now, take back our hostages!@C')
+        msg2(who,'\169000000255Вы - КОРОНА@C')
+        msg2(who,'\169000000255Вы обладаете высокой манёвренностью и славой разрушения@C')
+        msg2(who,'\169000000255А теперь верните наших заложников!@C')
         fix[1]=2
     end
 end
@@ -142,7 +142,7 @@ function start_r()
             give(hero[1],79,74,85,77,87)--[[
                 轻质护甲,扳手,电锯,地雷,激光地雷
             ]]
-            msg2(hero[1],'\169000000255You are the Engineer, manipulating your wrench is your necessity of victory@C')
+            msg2(hero[1],'\169000000255Вы - инженер, умение работать гаечным ключом - это ваша необходимость для победы@C')
         end
 
         --2号英雄固有装备
@@ -151,7 +151,7 @@ function start_r()
             give(hero[2],82,91,88)--[[
                 医疗护甲,步枪,传送枪
             ]]
-            msg2(hero[2],'\169000000255You are the Chrono-Soldier, use your teleport to dodge all the attacks@C')
+            msg2(hero[2],'\169000000255Вы - хроносолдат, используйте телепорт, чтобы уклониться от всех атак@C')
         end
 
         --3号英雄固有装备
@@ -161,7 +161,7 @@ function start_r()
             give(hero[3],80,73,51,52,54,72,76,89,35,30,41,46)--[[
                 护甲,燃烧瓶,手榴弹,闪光弹,照明弹,毒气弹,飞机支援,遥控炸弹,狙击枪,步枪,防爆盾,火焰喷射器
             ]]
-            msg2(hero[3],'\169000000255You are the Elite, you own multiple weapons, use them to achieve the highest dps.@C')
+            msg2(hero[3],'\169000000255Вы - специалист, у вас есть несколько видов оружия, используйте их для достижения максимального урона.@C')
         end
 
         --4号英雄固有装备
@@ -169,7 +169,7 @@ function start_r()
             give(hero[4],52,80)--[[
                 闪光弹,护甲
             ]]
-            msg2(hero[4],'\169000000255You are the Flash-Ganster, you have infinite number of flash bombs.@C')
+            msg2(hero[4],'\169000000255Вы - гангстер-ослепитель, у вас бесконечные светошумовые гранаты.@C')
         end
 
         --1号间谍固有装备
@@ -177,7 +177,7 @@ function start_r()
             give(spy[1],73,80)--[[
                 燃烧瓶,护甲
             ]]
-            msg2(spy[1],'\169000000255You are the Demolitionist, you have infinite number of incendiary bombs.@C')
+            msg2(spy[1],'\169000000255Вы - разрушитель, у вас бесконечные зажигательные гранаты.@C')
         end
 
         if_death=1--开始判断
@@ -255,9 +255,9 @@ function end_r()
         end
 
         if(boss[1]~=0)then
-            msg("\169255000000Warning: "..player(boss[1],'name')..' is BOSS!@C')
+            msg("\169255000000Внимание: "..player(boss[1],'name')..' БОСС!@C')
             if(boss[2]~=0)then
-                msg("\169255000000Warning: "..player(boss[2],'name')..' is BOSS!@C')
+                msg("\169255000000Внимание: "..player(boss[2],'name')..' БОСС!@C')
             end
         end
     end
@@ -271,19 +271,19 @@ function death(victim)
         if(if_death==1)then
             if(victim==hero[1])then
                 hero[1]=0
-                msg("The Engineer has died!")
+                msg("Инженер погиб!")
             end
             if(victim==hero[2])then
                 hero[2]=0
-                msg("The Chrono-Soldier has died!")
+                msg("Хроносолдат погиб!")
             end
             if(victim==hero[3])then
                 hero[3]=0
-                msg("The Elite has died!")
+                msg("Специалист погиб!")
             end
             if(victim==hero[4])then
                 hero[4]=0
-                msg("The Flash-Ganster has died!")
+                msg("Гангстер-ослепитель погиб!")
             end
         end
 
@@ -299,12 +299,12 @@ function death(victim)
                 parse('spawnplayer '..victim..' 1100'..' 850')
             end
             death_num=death_num-1
-            msg2(victim,"You are resurrected!@C")
+            msg2(victim,"Вы возродились!@C")
             give(victim,50,30)
         end
 
         if(#player(0,'team1living')~=0)then
-            msg("Remaining Terrorists: "..(#player(0,'team1living')+death_num).." people@C")
+            msg("Осталось террористов: "..(#player(0,'team1living')+death_num).."@C")
         end
 
         --禁止机甲掉落装备
@@ -373,7 +373,7 @@ end
 
 addhook('join','join_help')--加入说明
 function join_help(id)
-    msg2(id,"Hello, welcome to the Mecha-Server, send !help to view the rules@C")
+    msg2(id,"Привет, добро пожаловать на Mecha-Server, отправьте в чат !help для просмотра правил@C")
 end
 
 addhook('say','Admin')--管理员
@@ -382,13 +382,13 @@ function Admin(id,message)
         parse(message)
     end
     if(message=="!help")then
-        msg2(id,"This server includes six special characters and two BOSS. If you are the boss, press F2 to perform Airframe-Repairation@C")
+        msg2(id,"На этом сервере есть шесть особых персонажей и два БОССА. Если вы - босс, нажмите F2, чтобы выполнить ремонт корпуса@C")
     end
 end
 
 addhook("minute","all")--公告
 function all()
-    msg("Tips: If you are the Mecha, try to press F2 to repair your airframe when it is damaged")
+    msg("Совет: Если вы - меха, постарайтесь нажать F2, чтобы починить свой корпус если он повреждён")
 end
 
 addhook("serveraction","fix_a")--维修
@@ -398,14 +398,14 @@ local function fix_boss(boss_num)--填入boss编号而非id
             fix[boss_num]=fix[boss_num]-1
             parse('setmaxhealth '..boss[boss_num]..' '..250)
             parse('sethealth '..boss[boss_num]..' '..250)
-            msg2(boss[boss_num],'\169255000000Emergency restoration activated! Remaining: '..fix[boss_num]..' times@C')
-            msg(player(boss[boss_num],"name").."Current Mecha is being repaired, remaining "..fix[boss_num].." times!@C")
+            msg2(boss[boss_num],'\169255000000Активировано аварийное восстановление! Осталось раз: '..fix[boss_num]..'@C')
+            msg(player(boss[boss_num],"name").."Меха ремонтируется. Осталось раз: "..fix[boss_num].."!@C")
         elseif(fix[boss_num]>=1 and choose[1]==2)then
             fix[boss_num]=fix[boss_num]-1
             parse('setmaxhealth '..boss[boss_num]..' '..250)
             parse('sethealth '..boss[boss_num]..' '..250)
-            msg2(boss[boss_num],'\169255000000Emergency restoration activated! Remaining: '..fix[boss_num]..' times@C')
-            msg(player(boss[boss_num],"name").."Current Mecha is being repaired, remaining "..fix[boss_num].." times!@C")
+            msg2(boss[boss_num],'\169255000000Активировано аварийное восстановление! Осталось раз: '..fix[boss_num]..'@C')
+            msg(player(boss[boss_num],"name").."Меха ремонтируется. Осталось раз: "..fix[boss_num].."!@C")
         end
     end
 end
