@@ -255,9 +255,9 @@ function end_r()
         end
 
         if(boss[1]~=0)then
-            msg("\169255000000Warning:"..player(boss[1],'name')..'is BOSS!@C')
+            msg("\169255000000Warning: "..player(boss[1],'name')..' is BOSS!@C')
             if(boss[2]~=0)then
-                msg("\169255000000Warning:"..player(boss[2],'name')..'is BOSS!@C')
+                msg("\169255000000Warning: "..player(boss[2],'name')..' is BOSS!@C')
             end
         end
     end
@@ -271,19 +271,19 @@ function death(victim)
         if(if_death==1)then
             if(victim==hero[1])then
                 hero[1]=0
-                msg("The Engineer is died!")
+                msg("The Engineer has died!")
             end
             if(victim==hero[2])then
                 hero[2]=0
-                msg("The Chrono-Soldier is died！")
+                msg("The Chrono-Soldier has died!")
             end
             if(victim==hero[3])then
                 hero[3]=0
-                msg("The Elite is died！")
+                msg("The Elite has died!")
             end
             if(victim==hero[4])then
                 hero[4]=0
-                msg("The Flash-Ganster is died！")
+                msg("The Flash-Ganster has died!")
             end
         end
 
@@ -304,7 +304,7 @@ function death(victim)
         end
 
         if(#player(0,'team1living')~=0)then
-            msg("Remaining Terrorists:"..(#player(0,'team1living')+death_num).."people@C")
+            msg("Remaining Terrorists: "..(#player(0,'team1living')+death_num).." people@C")
         end
 
         --禁止机甲掉落装备
@@ -382,7 +382,7 @@ function Admin(id,message)
         parse(message)
     end
     if(message=="!help")then
-        msg2(id,"This server includes six special characters and two BOSS.If you are the boss, press F2 to perform Airframe-Repairation@C")
+        msg2(id,"This server includes six special characters and two BOSS. If you are the boss, press F2 to perform Airframe-Repairation@C")
     end
 end
 
@@ -398,14 +398,14 @@ local function fix_boss(boss_num)--填入boss编号而非id
             fix[boss_num]=fix[boss_num]-1
             parse('setmaxhealth '..boss[boss_num]..' '..250)
             parse('sethealth '..boss[boss_num]..' '..250)
-            msg2(boss[boss_num],'\169255000000Emergency restoration activated! Remaining:'..fix[boss_num]..'times@C')
-            msg(player(boss[boss_num],"name").."Current Mecha is being repaired，remaining"..fix[boss_num].."times!@C")
+            msg2(boss[boss_num],'\169255000000Emergency restoration activated! Remaining: '..fix[boss_num]..' times@C')
+            msg(player(boss[boss_num],"name").."Current Mecha is being repaired, remaining "..fix[boss_num].." times!@C")
         elseif(fix[boss_num]>=1 and choose[1]==2)then
             fix[boss_num]=fix[boss_num]-1
             parse('setmaxhealth '..boss[boss_num]..' '..250)
             parse('sethealth '..boss[boss_num]..' '..250)
-            msg2(boss[boss_num],'\169255000000Emergency restoration activated! Remaining:'..fix[boss_num]..'times@C')
-            msg(player(boss[boss_num],"name").."Current Mecha is being repaired，remaining"..fix[boss_num].."times!@C")
+            msg2(boss[boss_num],'\169255000000Emergency restoration activated! Remaining: '..fix[boss_num]..' times@C')
+            msg(player(boss[boss_num],"name").."Current Mecha is being repaired, remaining "..fix[boss_num].." times!@C")
         end
     end
 end
