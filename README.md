@@ -16,9 +16,14 @@
 >1. 只需要下载这个仓库，再将`Chinese/boss/CS2D/`下的所有文件导入`CS2D/`安装目录
 
 English
->1. Download this Repositories as zip
->2. Put `Chinese/boss/CS2D` into `CS2D`
->3. And put `English/boss_mod/1.3/CS2D_boss_mod.lua` into `CS2D/sys/lua/autorun`
+>1. Download this Repository as zip
+>2. Put folder `Chinese/boss/CS2D` into `CS2D` game's directory
+>3. And put folder `English/boss_mod/1.3/CS2D_boss_mod.lua` into `CS2D/sys/lua/autorun` game's folder
+
+Русский
+>1. Скачайте этот репозиторий в формате zip.
+>2. Поместите папку `Chinese/boss/CS2D` в папку игры `CS2D`.
+>3. И поместите `Russian/boss_mod/1.3/CS2D_boss_mod.lua` в папку игры `CS2D/sys/lua/autorun`.
 
 ## 地图
 - 使用`CS2D/maps/cs_office_new.map`
@@ -26,3 +31,5 @@ English
 ## 贡献者
 ### English translater:
     一个没有感情的杀手
+### Перевод на русский:
+    berry
